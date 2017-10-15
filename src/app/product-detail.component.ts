@@ -8,9 +8,12 @@ import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@
         <p *ngIf="product">
             ProductId: <input [(ngModel)]="product.id"/>
             Name: <input [(ngModel)]="product.name"/>
-            Condition: <select [(ngModel)]="product.condition">
+            Condition: <select [(ngModel)]="product.condition">                   
             <option *ngFor="let c of conditions" [value]="c">{{getAsString(c)}}</option>
-        </select>
+        </select><br>
+        ProductId: {{product.id}}<br>
+        Name: {{"   " + product.name}}<br>
+        
             <button (click)="requestDelete()">Delete</button>
         </p>`
 })
