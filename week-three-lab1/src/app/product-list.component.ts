@@ -51,7 +51,7 @@ export class ProductListComponent {
     productsList:Product[];
     
     constructor(productService:ProductService){
-    productService.getProducts().then(products=> this.productsList=products);
+    productService.getProducts().subscribe(products=> this.productsList=products);
     }
     
         
