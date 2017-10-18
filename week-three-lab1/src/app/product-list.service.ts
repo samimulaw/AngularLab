@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product';
 import { productsList } from './mock-product';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 @Injectable()
 export class ProductService {
-    getProducts():Promise<Product[]>{
-        return Promise.resolve(productsList);
+    getProducts():Observable<Product[]>{
+        return Observable.of(productsList);
     }
 }
